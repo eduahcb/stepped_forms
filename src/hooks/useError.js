@@ -12,7 +12,7 @@ const useError = (validation) => {
 
   const canImoveToNextStep = () => {
     for (const field in errors) {
-      if (!errors[field].isValid === true) {
+      if (!errors[field].isValid) {
         return false
       }
     }
