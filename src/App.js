@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { Container, Grid, Typography } from '@material-ui/core'
+import { Forms } from './components/forms'
+
+import { ValidationProvider } from './context/ValidationContext'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Container maxWidth="lg">
+      <Grid
+        style={{ marginTop: '3em' }}
+        container
+        alignContent="center"
+        direction="column"
+        spacing={0}
+      >
+        <Grid item xs={5}>
+          <Grid container justify="center">
+            <Typography variant="h4" component="h2" display="block">
+              Formulário de cadastro
+            </Typography>
+          </Grid>
+        </Grid>
+
+        <Grid item xs={5}>
+          <Grid container justify="center">
+            <ValidationProvider>
+              <Forms />
+            </ValidationProvider>
+          </Grid>
+        </Grid>
+      </Grid>
+    </Container>
+  )
 }
 
-export default App;
+export default App
