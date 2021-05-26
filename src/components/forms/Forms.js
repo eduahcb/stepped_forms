@@ -10,7 +10,7 @@ const Forms = () => {
   const [data, setData] = useState({})
 
   useEffect(() => {
-    if (steps === Object.keys(forms).length) {
+    if (steps === Object.keys(forms).length - 1) {
       console.log(data)
     }
   })
